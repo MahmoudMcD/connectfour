@@ -96,10 +96,11 @@ public class MainBody {
         // Draw the metrix and walk with it you will get it
         // x alway --
         // y depend on the direction of going (move)
-        for (int tempX = xCoordinate, tempY = yCoordinate; tempX > 0 && tempY >= 0 && tempY < 7; tempX--, tempY += move)
+        for (int tempX = xCoordinate, tempY = yCoordinate; tempX > 0 && tempY >= 0 && tempY < 7 && count < 4; tempX--, tempY += move)
         {
             if (ar[tempX][tempY] == playerNum)
             {
+                System.out.println(ar[tempX][tempY]+" "+move);
                 count++;    strike = 1;
             }
             else
@@ -107,7 +108,7 @@ public class MainBody {
                 count = 0;  strike = 0;
             }
         }
-
+        System.out.println(strike+count);
         return (count == 4 && strike == 1);
 	}
 
